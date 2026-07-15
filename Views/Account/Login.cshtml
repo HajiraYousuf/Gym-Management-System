@@ -1,0 +1,36 @@
+@model GymManagementSystem.Models.LoginViewModel
+
+
+<h2>Login</h2>
+
+
+<form asp-action="Login" method="post">
+
+
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" />
+    </div>
+
+
+    <div>
+        <label>Password</label>
+        <input asp-for="Password" />
+    </div>
+
+
+    <div>
+        <input asp-for="RememberMe" />
+        <label>Remember Me</label>
+    </div>
+
+
+    <button type="submit">
+        Login
+    </button>
+
+
+    <div asp-validation-summary="All"></div>
+
+
+</form>
