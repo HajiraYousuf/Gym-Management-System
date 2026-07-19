@@ -113,149 +113,46 @@
 
 </section>
 
-<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mb-6 ">
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mb-6">
+        <% 
+            // Xogta waxaan toos ugu qornay meesha loogu talagalay si loo arko
+            var dashboardCards = new[]
+            {
+                new { Title = "Total Members", Value = "1,250", Icon = "ri-group-line", Status = "↑ 12% this month", StatusColor = "text-lime-400" },
+                new { Title = "Active Trainers", Value = "45", Icon = "ri-user-star-line", Status = "↑ 5 new trainers", StatusColor = "text-lime-400" },
+                new { Title = "Staff Members", Value = "45", Icon = "ri-team-line", Status = "Total staff members", StatusColor = "text-gray-400" },
+                new { Title = "Monthly Revenue", Value = "$24.5K", Icon = "ri-money-dollar-circle-line", Status = "↑ 18% increase", StatusColor = "text-lime-400" },
+                new { Title = "Check In Today", Value = "320", Icon = "ri-login-circle-line", Status = "Today's check-ins", StatusColor = "text-gray-400" },
+                new { Title = "New Messages", Value = "24", Icon = "ri-message-3-line", Status = "Unread messages", StatusColor = "text-gray-400" }
+            };
 
-    <!-- Card 1 -->
-    <div class="bg-gradient-to-r from-lime-950 to-zinc-900 border border-gray-800 rounded-xl p-4">
-                <div class="flex items-center justify-between">
-            <div>
-                <p class="text-gray-400 text-xs">Total Members</p>
-                <h2 class="text-xl font-bold text-white mt-1">1,250</h2>
-            </div>
-            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-lime-400/10 text-lime-400">
-                <i class="ri-group-line text-xl"></i>
-            </div>
-        </div>
-        <p class="text-lime-400 text-xs mt-3">
-            ↑ 12% this month
-        </p>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="bg-gradient-to-r from-lime-950 to-zinc-900 border border-gray-800 rounded-xl p-4">
-
-        <div class="flex items-center justify-between">
-
-            <div>
-                <p class="text-gray-400 text-xs">Active Trainers</p>
-                <h2 class="text-xl font-bold text-white mt-1">45</h2>
-            </div>
-
-            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-lime-400/10 text-lime-400">
-                <i class="ri-user-star-line text-xl"></i>
-            </div>
-
-        </div>
-
-        <p class="text-lime-400 text-xs mt-3">
-            ↑ 5 new trainers
-        </p>
-
-    </div>
-
-
-
-    <!-- Card 3 -->
-    <div class="bg-gradient-to-r from-lime-950 to-zinc-900 border border-gray-800 rounded-xl p-4">
-
-        <div class="flex items-center justify-between">
-
-            <div>
-                <p class="text-gray-400 text-xs">Staff Members</p>
-                <h2 class="text-xl font-bold text-white mt-1">45</h2>
-            </div>
-
-            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-lime-400/10 text-lime-400">
-                <i class="ri-team-line text-xl"></i>
-            </div>
-
-        </div>
-
-        <p class="text-gray-400 text-xs mt-3">
-            Total staff members
-        </p>
-
-    </div>
-
-
-
-    <!-- Card 4 -->
-    <div class="bg-gradient-to-r from-lime-950 to-zinc-900 border border-gray-800 rounded-xl p-4">
-
-        <div class="flex items-center justify-between">
-
-            <div>
-                <p class="text-gray-400 text-xs">Monthly Revenue</p>
-                <h2 class="text-xl font-bold text-white mt-1">$24.5K</h2>
-            </div>
-
-            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-lime-400/10 text-lime-400">
-                <i class="ri-money-dollar-circle-line text-xl"></i>
-            </div>
-
-        </div>
-
-        <p class="text-lime-400 text-xs mt-3">
-            ↑ 18% increase
-        </p>
-
-    </div>
-
-
-
-    <!-- Card 5 -->
-    <div class="bg-gradient-to-r from-lime-950 to-zinc-900 border border-gray-800 rounded-xl p-4">
-
-        <div class="flex items-center justify-between">
-
-            <div>
-                <p class="text-gray-400 text-xs">Check In Today</p>
-                <h2 class="text-xl font-bold text-white mt-1">320</h2>
-            </div>
-
-            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-lime-400/10 text-lime-400">
-                <i class="ri-login-circle-line text-xl"></i>
-            </div>
-
-        </div>
-
-        <p class="text-gray-400 text-xs mt-3">
-            Today's check-ins
-        </p>
-
-    </div>
-
-
-
-    <!-- Card 6 -->
-    <div class="bg-gradient-to-r from-lime-950 to-zinc-900 border border-gray-800 rounded-xl p-4">
-
-        <div class="flex items-center justify-between">
-
-            <div>
-                <p class="text-gray-400 text-xs">New Messages</p>
-                <h2 class="text-xl font-bold text-white mt-1">24</h2>
-            </div>
-
-            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-lime-400/10 text-lime-400">
-                <i class="ri-message-3-line text-xl"></i>
-            </div>
-
-        </div>
-
-        <p class="text-gray-400 text-xs mt-3">
-            Unread messages
-        </p>
-
-    </div>
-
-
-</section>
+            foreach (var card in dashboardCards)
+            {
+        %>
+                <!-- Card -->
+                <div class="bg-gradient-to-r from-lime-950 to-zinc-900 border border-gray-800 rounded-xl p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-400 text-xs"><%= card.Title %></p>
+                            <h2 class="text-xl font-bold text-white mt-1"><%= card.Value %></h2>
+                        </div>
+                        <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-lime-400/10 text-lime-400">
+                            <i class="<%= card.Icon %> text-xl"></i>
+                        </div>
+                    </div>
+                    <p class="<%= card.StatusColor %> text-xs mt-3">
+                        <%= card.Status %>
+                    </p>
+                </div>
+        <% 
+            } // Dhamaadka Loop-ka
+        %>
+    </section>
 
 <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6 items-stretch">
 
    <!-- ================= MEMBER STATUS ================= -->
-    <div class="bg-[#181d22] border border-gray-700 rounded-md  transition-all duration-300 p-5 h-[280px]">
+    <div class="bg-[#181d22] border border-gray-700 rounded-xl transition-all duration-300 p-5 h-[280px]">
 
         <!-- Header -->
         <div class="flex justify-between items-center mb-6">
@@ -273,83 +170,41 @@
         <div class="flex items-center justify-between gap-6 h-[190px]">
 
             <!-- Chart -->
-            <div class="relative w-32 h-32  flex-shrink-0 flex items-center justify-center">
-
+            <div class="relative w-32 h-32 flex-shrink-0 flex items-center justify-center">
                 <canvas id="memberStatusChart" class="w-full h-full"></canvas>
 
                 <!-- Center Text -->
                 <div class="absolute text-center">
-                    <h2 class="text-2xl font-bold text-white leading-none">
-                        1248
-                    </h2>
-
-                    <p class="text-gray-400 text-sm mt-1">
-                        Total
-                    </p>
+                    <h2 class="text-2xl font-bold text-white leading-none">1248</h2>
+                    <p class="text-gray-400 text-sm mt-1">Total</p>
                 </div>
-
             </div>
 
-            <!-- Status -->
+            <!-- Status (Loop-ka Xogta) -->
             <div class="flex-1 min-w-0 space-y-3">
+                <% 
+                    var memberStatuses = new[]
+                    {
+                        new { Name = "Active Members", CountInfo = "982 (78.7%)", DotColor = "bg-lime-400", TextColor = "text-lime-400" },
+                        new { Name = "Expired Members", CountInfo = "186 (14.9%)", DotColor = "bg-yellow-400", TextColor = "text-yellow-400" },
+                        new { Name = "Inactive Members", CountInfo = "80 (6.4%)", DotColor = "bg-gray-500", TextColor = "text-gray-400" }
+                    };
 
-                <!-- Active -->
-                <div class="rounded-lg p-3">
-                    <div class="flex items-center gap-3">
-
-                        <span class="w-3 h-3 rounded-full bg-lime-400 flex-shrink-0"></span>
-
-                        <div>
-                            <h4 class="text-white text-sm font-semibold">
-                                Active Members
-                            </h4>
-
-                            <p class="text-lime-400 text-xs">
-                                982 (78.7%)
-                            </p>
+                    foreach (var status in memberStatuses)
+                    {
+                %>
+                        <div class="rounded-lg p-3">
+                            <div class="flex items-center gap-3">
+                                <span class="w-3 h-3 rounded-full <%= status.DotColor %> flex-shrink-0"></span>
+                                <div>
+                                    <h4 class="text-white text-sm font-semibold"><%= status.Name %></h4>
+                                    <p class="<%= status.TextColor %> text-xs"><%= status.CountInfo %></p>
+                                </div>
+                            </div>
                         </div>
-
-                    </div>
-                </div>
-
-                <!-- Expired -->
-                <div class="rounded-lg p-3">
-                    <div class="flex items-center gap-3">
-
-                        <span class="w-3 h-3 rounded-full bg-yellow-400 flex-shrink-0"></span>
-
-                        <div>
-                            <h4 class="text-white text-sm font-semibold">
-                                Expired Members
-                            </h4>
-
-                            <p class="text-yellow-400 text-xs">
-                                186 (14.9%)
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Inactive -->
-                <div class="rounded-lg p-3">
-                    <div class="flex items-center gap-3">
-
-                        <span class="w-3 h-3 rounded-full bg-gray-500 flex-shrink-0"></span>
-
-                        <div>
-                            <h4 class="text-white text-sm font-semibold">
-                                Inactive Members
-                            </h4>
-
-                            <p class="text-gray-400 text-xs">
-                                80 (6.4%)
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-
+                <% 
+                    } 
+                %>
             </div>
 
         </div>
@@ -357,138 +212,60 @@
     </div>
 
     <!-- ================= MEMBERS OVERVIEW ================= -->
-    <div class="bg-[#181d22] border border-gray-700 rounded-md transition-all duration-300 p-5 h-[280px]">
-
-
-            <div class="flex justify-between items-center mb-5">
-
-                <h2 class="text-white font-semibold text-lg">
-                    Members Overview
-                </h2>
-
-
-                <button class="text-gray-400 text-sm">
-
-                    This Month
-
-                    <i class="fa-solid fa-chevron-down ml-1"></i>
-
-                </button>
-
-
-            </div>
-
-
-
-            <div class="h-[180px] w-full">
-
-                <canvas id="overviewChart"></canvas>
-
-            </div>
-
-
-
+    <div class="bg-[#181d22] border border-gray-700 rounded-xl transition-all duration-300 p-5 h-[280px]">
+        <div class="flex justify-between items-center mb-5">
+            <h2 class="text-white font-semibold text-lg">Members Overview</h2>
+            <button class="text-gray-400 text-sm">
+                This Month <i class="fa-solid fa-chevron-down ml-1"></i>
+            </button>
         </div>
+
+        <div class="h-[180px] w-full">
+            <canvas id="overviewChart"></canvas>
+        </div>
+    </div>
 
 
     <!-- ================= CALENDAR ================= -->
-    <div class="bg-[#181d22] border border-gray-700 rounded-md transition-all duration-300 p-5 h-[280px]">
-
-
-            <div class="flex justify-between items-center">
-
-                <h2 class="text-white font-semibold text-lg">
-                    Calendar
-                </h2>
-
-
-                <i class="fa-solid fa-calendar text-lime-400"></i>
-
-
-            </div>
-
-
-
-
-            <div class="mt-5">
-
-
-                <div class="grid grid-cols-7 gap-1 text-center text-gray-400 text-xs">
-
-                    <span>Sun</span>
-                    <span>Mon</span>
-                    <span>Tue</span>
-                    <span>Wed</span>
-                    <span>Thu</span>
-                    <span>Fri</span>
-                    <span>Sat</span>
-
-                </div>
-
-
-
-
-                <div class="grid grid-cols-7 gap-1 mt-3 text-center text-sm">
-
-
-                    <span class="text-gray-500 py-1">27</span>
-                    <span class="text-gray-500 py-1">28</span>
-                    <span class="text-gray-500 py-1">29</span>
-                    <span class="text-gray-500 py-1">30</span>
-
-
-                    <span class="text-white py-1">1</span>
-                    <span class="text-white py-1">2</span>
-                    <span class="text-white py-1">3</span>
-
-
-                    <span class="text-white py-1">4</span>
-                    <span class="text-white py-1">5</span>
-                    <span class="text-white py-1">6</span>
-                    <span class="text-white py-1">7</span>
-                    <span class="text-white py-1">8</span>
-                    <span class="text-white py-1">9</span>
-                    <span class="text-white py-1">10</span>
-
-
-                    <span class="text-white py-1">11</span>
-                    <span class="text-white py-1">12</span>
-                    <span class="text-white py-1">13</span>
-                    <span class="text-white py-1">14</span>
-                    <span class="text-white py-1">15</span>
-
-
-                    <div class="bg-lime-400 text-black rounded-lg py-1 font-bold">
-                        16
-                    </div>
-
-
-                    <span class="text-white py-1">17</span>
-                    <span class="text-white py-1">18</span>
-                    <span class="text-white py-1">19</span>
-                    <span class="text-white py-1">20</span>
-                    <span class="text-white py-1">21</span>
-                    <span class="text-white py-1">22</span>
-                    <span class="text-white py-1">23</span>
-
-
-                    <span class="text-white py-1">24</span>
-                    <span class="text-white py-1">25</span>
-                    <span class="text-white py-1">26</span>
-                    <span class="text-white py-1">27</span>
-                    <span class="text-white py-1">28</span>
-                    <span class="text-white py-1">29</span>
-                    <span class="text-white py-1">30</span>
-                    <span class="text-white py-1">31</span>
-
-
-                </div>
-
-
-            </div>
-
-
+    <div class="bg-[#181d22] border border-gray-700 rounded-xl transition-all duration-300 p-5 h-[280px]">
+        <div class="flex justify-between items-center">
+            <h2 class="text-white font-semibold text-lg">Calendar</h2>
+            <i class="fa-solid fa-calendar text-lime-400"></i>
         </div>
+
+        <div class="mt-5">
+            <!-- Maalmaha Toddobaadka -->
+            <div class="grid grid-cols-7 gap-1 text-center text-gray-400 text-xs">
+                <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            </div>
+
+            <!-- Maalmaha bisha (Loop) -->
+            <div class="grid grid-cols-7 gap-1 mt-3 text-center text-sm">
+                <% 
+                    // 1. Maalmihii bishii hore ee haray (27 ilaa 30)
+                    for (int d = 27; d <= 30; d++) { 
+                %>
+                        <span class="text-gray-500 py-1"><%= d %></span>
+                <% 
+                    } 
+
+                    // 2. Maalmaha bishan (1 ilaa 31)
+                    for (int d = 1; d <= 31; d++) { 
+                        if (d == 16) { 
+                %>
+                            <!-- Maalinta cagaarka ah (16) -->
+                            <div class="bg-lime-400 text-black rounded-lg py-1 font-bold">16</div>
+                <% 
+                        } else { 
+                %>
+                            <span class="text-white py-1"><%= d %></span>
+                <% 
+                        }
+                    } 
+                %>
+            </div>
+        </div>
+    </div>
 
 </section>
 
@@ -508,9 +285,9 @@
                 </button>
             </div>
 
-            <!-- Table Container (Scrollable on small screens if needed) -->
+            <!-- Table Container -->
             <div class="overflow-x-auto rounded-xl border border-[#232B35]">
-                <div class="">
+                <div>
                     <!-- Heading -->
                     <div class="grid grid-cols-5 bg-[#1B232D] text-gray-400 text-xs font-medium px-4 py-3">
                         <div>Invoice</div>
@@ -520,70 +297,34 @@
                         <div>Date</div>
                     </div>
 
-                    <!-- Row 1 -->
-                    <div class="grid grid-cols-5 items-center px-4 py-2.5 text-sm border-t border-[#232B35] hover:bg-[#1B232D] transition">
-                        <div class="text-gray-300 text-xs">INV-00125</div>
-                        <div class="text-white font-medium truncate pr-2">Ahmed Ali</div>
-                        <div class="text-white">$120.00</div>
-                        <div>
-                            <span class="bg-lime-500/20 text-lime-400 text-xs px-2 py-0.5 rounded-full inline-block">
-                                Paid
-                            </span>
-                        </div>
-                        <div class="text-gray-400 text-xs">16 May 2025</div>
-                    </div>
+                    <!-- Row Loop-ka Xogta -->
+                    <% 
+                        var invoices = new[]
+                        {
+                            new { ID = "INV-00125", Member = "Ahmed Ali", Amount = "$120.00", Status = "Paid", BadgeClass = "bg-lime-500/20 text-lime-400", Date = "16 May 2025" },
+                            new { ID = "INV-00124", Member = "Mohamed Hassan", Amount = "$150.00", Status = "Paid", BadgeClass = "bg-blue-500/20 text-blue-400", Date = "16 May 2025" },
+                            new { ID = "INV-00123", Member = "Aisha Mohamed", Amount = "$90.00", Status = "Pending", BadgeClass = "bg-yellow-500/20 text-yellow-400", Date = "15 May 2025" },
+                            new { ID = "INV-00122", Member = "Omar Yusuf", Amount = "$200.00", Status = "Paid", BadgeClass = "bg-lime-500/20 text-lime-400", Date = "15 May 2025" },
+                            new { ID = "INV-00121", Member = "Fatima Abdi", Amount = "$110.00", Status = "Pending", BadgeClass = "bg-yellow-500/20 text-yellow-400", Date = "14 May 2025" }
+                        };
 
-                    <!-- Row 2 -->
-                    <div class="grid grid-cols-5 items-center px-4 py-2.5 text-sm border-t border-[#232B35] hover:bg-[#1B232D] transition">
-                        <div class="text-gray-300 text-xs">INV-00124</div>
-                        <div class="text-white font-medium truncate pr-2">Mohamed Hassan</div>
-                        <div class="text-white">$150.00</div>
-                        <div>
-                            <span class="bg-blue-500/20 text-blue-400 text-xs px-2 py-0.5 rounded-full inline-block">
-                                Paid
-                            </span>
-                        </div>
-                        <div class="text-gray-400 text-xs">16 May 2025</div>
-                    </div>
-
-                    <!-- Row 3 -->
-                    <div class="grid grid-cols-5 items-center px-4 py-2.5 text-sm border-t border-[#232B35] hover:bg-[#1B232D] transition">
-                        <div class="text-gray-300 text-xs">INV-00123</div>
-                        <div class="text-white font-medium truncate pr-2">Aisha Mohamed</div>
-                        <div class="text-white">$90.00</div>
-                        <div>
-                            <span class="bg-yellow-500/20 text-yellow-400 text-xs px-2 py-0.5 rounded-full inline-block">
-                                Pending
-                            </span>
-                        </div>
-                        <div class="text-gray-400 text-xs">15 May 2025</div>
-                    </div>
-
-                    <!-- Row 4 -->
-                    <div class="grid grid-cols-5 items-center px-4 py-2.5 text-sm border-t border-[#232B35] hover:bg-[#1B232D] transition">
-                        <div class="text-gray-300 text-xs">INV-00122</div>
-                        <div class="text-white font-medium truncate pr-2">Omar Yusuf</div>
-                        <div class="text-white">$200.00</div>
-                        <div>
-                            <span class="bg-lime-500/20 text-lime-400 text-xs px-2 py-0.5 rounded-full inline-block">
-                                Paid
-                            </span>
-                        </div>
-                        <div class="text-gray-400 text-xs">15 May 2025</div>
-                    </div>
-
-                    <!-- Row 5 -->
-                    <div class="grid grid-cols-5 items-center px-4 py-2.5 text-sm border-t border-[#232B35] hover:bg-[#1B232D] transition">
-                        <div class="text-gray-300 text-xs">INV-00121</div>
-                        <div class="text-white font-medium truncate pr-2">Fatima Abdi</div>
-                        <div class="text-white">$110.00</div>
-                        <div>
-                            <span class="bg-yellow-500/20 text-yellow-400 text-xs px-2 py-0.5 rounded-full inline-block">
-                                Pending
-                            </span>
-                        </div>
-                        <div class="text-gray-400 text-xs">14 May 2025</div>
-                    </div>
+                        foreach (var inv in invoices)
+                        {
+                    %>
+                            <div class="grid grid-cols-5 items-center px-4 py-2.5 text-sm border-t border-[#232B35] hover:bg-[#1B232D] transition">
+                                <div class="text-gray-300 text-xs"><%= inv.ID %></div>
+                                <div class="text-white font-medium truncate pr-2"><%= inv.Member %></div>
+                                <div class="text-white"><%= inv.Amount %></div>
+                                <div>
+                                    <span class="<%= inv.BadgeClass %> text-xs px-2 py-0.5 rounded-full inline-block">
+                                        <%= inv.Status %>
+                                    </span>
+                                </div>
+                                <div class="text-gray-400 text-xs"><%= inv.Date %></div>
+                            </div>
+                    <% 
+                        } 
+                    %>
                 </div>
             </div>
         </div>
@@ -642,29 +383,29 @@
                     <canvas id="paymentChart" class="w-full h-full absolute inset-0"></canvas>
                 </div>
 
-                <!-- Legend -->
+                <!-- Legend Loop-ka Xogta -->
                 <div class="space-y-3 flex-1 min-w-0">
-                    <div class="flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-lime-400 flex-shrink-0"></span>
-                        <div class="min-w-0">
-                            <h4 class="text-white text-xs font-medium truncate">Paid</h4>
-                            <p class="text-gray-400 text-xs">72%</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 flex-shrink-0"></span>
-                        <div class="min-w-0">
-                            <h4 class="text-white text-xs font-medium truncate">Pending</h4>
-                            <p class="text-gray-400 text-xs">18%</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-red-500 flex-shrink-0"></span>
-                        <div class="min-w-0">
-                            <h4 class="text-white text-xs font-medium truncate">Overdue</h4>
-                            <p class="text-gray-400 text-xs">10%</p>
-                        </div>
-                    </div>
+                    <% 
+                        var paymentStats = new[]
+                        {
+                            new { Title = "Paid", Percent = "72%", Color = "bg-lime-400" },
+                            new { Title = "Pending", Percent = "18%", Color = "bg-yellow-400" },
+                            new { Title = "Overdue", Percent = "10%", Color = "bg-red-500" }
+                        };
+
+                        foreach (var stat in paymentStats)
+                        {
+                    %>
+                            <div class="flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full <%= stat.Color %> flex-shrink-0"></span>
+                                <div class="min-w-0">
+                                    <h4 class="text-white text-xs font-medium truncate"><%= stat.Title %></h4>
+                                    <p class="text-gray-400 text-xs"><%= stat.Percent %></p>
+                                </div>
+                            </div>
+                    <% 
+                        } 
+                    %>
                 </div>
             </div>
         </div>
@@ -694,7 +435,7 @@
                     </div>
                 </div>
 
-                <!-- Stats -->
+                <!-- Stats (Kani waa static dynamic classes kala duwan leh) -->
                 <div class="space-y-2 flex-1">
                     <div class="bg-[#1B232D] rounded-xl px-3 py-1.5 flex justify-between items-center">
                         <p class="text-gray-400 text-xs">Present</p>
@@ -715,196 +456,191 @@
 
 </section>
 
-<section class="flex flex-row gap-4 w-full max-w-[1600px] my-6">
+<section class="flex flex-col lg:flex-row gap-4 w-full max-w-[1600px] my-6 items-stretch">
 
-    <!-- 1. SCHEDULE LIST CARD -->
-    <div class="bg-[#111625] border border-[#1e2640] rounded-xl p-5 flex-[1.4] min-w-[360px]">
-        <div class="flex justify-between items-center mb-5">
-            <h3 class="text-[17px] font-semibold tracking-wide text-white">Schedule</h3>
-            <a href="#" class="text-[13px] text-[#d4af37] font-medium hover:underline">View All</a>
-        </div>
-        
-        <table class="w-full text-left border-collapse">
-            <thead>
-                <tr class="text-[13px] text-gray-500 font-medium uppercase tracking-wider border-none">
-                    <th class="pb-3">Time</th>
-                    <th class="pb-3">Class</th>
-                    <th class="pb-3">Trainer</th>
-                    <th class="pb-3 text-right">Status</th>
-                </tr>
-            </thead>
-            <tbody class="text-[15px] text-slate-300">
-                <tr class="border-b border-[#1e2640]">
-                    <td class="py-3.5">07:00 AM</td>
-                    <td class="py-3.5 font-medium text-white">Strength</td>
-                    <td class="py-3.5">Ali Ahmed</td>
-                    <td class="py-3.5 text-right"><span class="text-[#84cc16] text-[13px] font-semibold">Ongoing</span></td>
-                </tr>
-                <tr class="border-b border-[#1e2640]">
-                    <td class="py-3.5">09:00 AM</td>
-                    <td class="py-3.5 font-medium text-white">Yoga</td>
-                    <td class="py-3.5">Sarah Khan</td>
-                    <td class="py-3.5 text-right"><span class="text-[#84cc16] text-[13px] font-semibold">Ongoing</span></td>
-                </tr>
-                <tr class="border-b border-[#1e2640]">
-                    <td class="py-3.5">11:00 AM</td>
-                    <td class="py-3.5 font-medium text-white">Zumba</td>
-                    <td class="py-3.5">Maryam Ali</td>
-                    <td class="py-3.5 text-right"><span class="text-[#0d9488] text-[13px] font-semibold">Upcoming</span></td>
-                </tr>
-                <tr class="border-b border-[#1e2640]">
-                    <td class="py-3.5">04:00 PM</td>
-                    <td class="py-3.5 font-medium text-white">CrossFit</td>
-                    <td class="py-3.5">Hassan Y.</td>
-                    <td class="py-3.5 text-right"><span class="text-[#0d9488] text-[13px] font-semibold">Upcoming</span></td>
-                </tr>
-                <tr>
-                    <td class="py-3.5">06:00 PM</td>
-                    <td class="py-3.5 font-medium text-white">Abs & Core</td>
-                    <td class="py-3.5">Omar Farah</td>
-                    <td class="py-3.5 text-right"><span class="text-[#0d9488] text-[13px] font-semibold">Upcoming</span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- 2. RECENT ACTIVITY CARD -->
-    <div class="bg-[#111625] border border-[#1e2640] rounded-xl p-5 flex-1 min-w-[260px]">
-        <div class="flex justify-between items-center mb-5">
-            <h3 class="text-[17px] font-semibold tracking-wide text-white">Activity</h3>
-            <a href="#" class="text-[13px] text-[#d4af37] font-medium hover:underline">View All</a>
-        </div>
-        
-        <div class="space-y-1">
-            <div class="flex items-center justify-between py-3 border-b border-[#1e2640]">
-                <div class="flex items-center gap-3 truncate">
-                    <div class="w-7 h-7 bg-lime-500/10 text-[#84cc16] rounded flex items-center justify-center text-[13px] flex-shrink-0"><i class="fa-solid fa-user-plus"></i></div>
-                    <div class="text-[15px] text-slate-300 truncate">Ahmed Ali joined</div>
-                </div>
-                <div class="text-[13px] text-gray-500 pl-2 flex-shrink-0">10:15 AM</div>
+    <!-- ================= 1. SCHEDULE LIST CARD ================= -->
+    <div class="bg-[#111625] border border-[#1e2640] rounded-xl p-5 flex-[1.4] min-w-[360px] flex flex-col justify-between">
+        <div>
+            <div class="flex justify-between items-center mb-5">
+                <h3 class="text-[17px] font-semibold tracking-wide text-white">Schedule</h3>
+                <a href="#" class="text-[13px] text-[#d4af37] font-medium hover:underline">View All</a>
             </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="text-[13px] text-gray-500 font-medium uppercase tracking-wider border-none">
+                            <th class="pb-3">Time</th>
+                            <th class="pb-3">Class</th>
+                            <th class="pb-3">Trainer</th>
+                            <th class="pb-3 text-right">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-[15px] text-slate-300">
+                        <% 
+                            var schedules = new[]
+                            {
+                                new { Time = "07:00 AM", ClassName = "Strength", Trainer = "Ali Ahmed", Status = "Ongoing", StatusClass = "text-[#84cc16]" },
+                                new { Time = "09:00 AM", ClassName = "Yoga", Trainer = "Sarah Khan", Status = "Ongoing", StatusClass = "text-[#84cc16]" },
+                                new { Time = "11:00 AM", ClassName = "Zumba", Trainer = "Maryam Ali", Status = "Upcoming", StatusClass = "text-[#0d9488]" },
+                                new { Time = "04:00 PM", ClassName = "CrossFit", Trainer = "Hassan Y.", Status = "Upcoming", StatusClass = "text-[#0d9488]" },
+                                new { Time = "06:00 PM", ClassName = "Abs & Core", Trainer = "Omar Farah", Status = "Upcoming", StatusClass = "text-[#0d9488]" }
+                            };
 
-            <div class="flex items-center justify-between py-3 border-b border-[#1e2640]">
-                <div class="flex items-center gap-3 truncate">
-                    <div class="w-7 h-7 bg-teal-500/10 text-[#0d9488] rounded flex items-center justify-center text-[13px] flex-shrink-0"><i class="fa-solid fa-wallet"></i></div>
-                    <div class="text-[15px] text-slate-300 truncate">Received $120.00</div>
-                </div>
-                <div class="text-[13px] text-gray-500 pl-2 flex-shrink-0">09:45 AM</div>
-            </div>
-
-            <div class="flex items-center justify-between py-3 border-b border-[#1e2640]">
-                <div class="flex items-center gap-3 truncate">
-                    <div class="w-7 h-7 bg-lime-500/10 text-[#84cc16] rounded flex items-center justify-center text-[13px] flex-shrink-0"><i class="fa-solid fa-box"></i></div>
-                    <div class="text-[15px] text-slate-300 truncate">"Premium" pack created</div>
-                </div>
-                <div class="text-[13px] text-gray-500 pl-2 flex-shrink-0">Yesterday</div>
-            </div>
-
-            <div class="flex items-center justify-between py-3 border-b border-[#1e2640]">
-                <div class="flex items-center gap-3 truncate">
-                    <div class="w-7 h-7 bg-lime-500/10 text-[#84cc16] rounded flex items-center justify-center text-[13px] flex-shrink-0"><i class="fa-solid fa-dumbbell"></i></div>
-                    <div class="text-[15px] text-slate-300 truncate">Ali added new class</div>
-                </div>
-                <div class="text-[13px] text-gray-500 pl-2 flex-shrink-0">Yesterday</div>
-            </div>
-
-            <div class="flex items-center justify-between py-3">
-                <div class="flex items-center gap-3 truncate">
-                    <div class="w-7 h-7 bg-lime-500/10 text-[#84cc16] rounded flex items-center justify-center text-[13px] flex-shrink-0"><i class="fa-solid fa-calendar-days"></i></div>
-                    <div class="text-[15px] text-slate-300 truncate">"Muscle Gain" plan</div>
-                </div>
-                <div class="text-[13px] text-gray-500 pl-2 flex-shrink-0">16 May</div>
+                            for (int i = 0; i < schedules.Length; i++)
+                            {
+                                var item = schedules[i];
+                                string borderClass = (i == schedules.Length - 1) ? "" : "border-b border-[#1e2640]";
+                        %>
+                                <tr class="<%= borderClass %>">
+                                    <td class="py-3.5"><%= item.Time %></td>
+                                    <td class="py-3.5 font-medium text-white"><%= item.ClassName %></td>
+                                    <td class="py-3.5"><%= item.Trainer %></td>
+                                    <td class="py-3.5 text-right">
+                                        <span class="<%= item.StatusClass %> text-[13px] font-semibold"><%= item.Status %></span>
+                                    </td>
+                                </tr>
+                        <% 
+                            } 
+                        %>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 
-    <!-- 3. NOTICE BOARD CARD -->
-    <div class="bg-[#111625] border border-[#1e2640] rounded-xl p-5 flex-1 min-w-[260px]">
-        <div class="flex justify-between items-center mb-5">
-            <h3 class="text-[17px] font-semibold tracking-wide text-white">Notices</h3>
-            <a href="#" class="text-[13px] text-[#d4af37] font-medium hover:underline">View All</a>
-        </div>
-
-        <div class="space-y-1">
-            <div class="flex items-center py-3 border-b border-[#1e2640] gap-3">
-                <div class="w-7 h-7 bg-lime-500/10 text-[#84cc16] rounded flex items-center justify-center text-[13px] flex-shrink-0"><i class="fa-solid fa-bullhorn"></i></div>
-                <div class="text-[15px] text-slate-300 leading-tight truncate">
-                    Closed on Sunday
-                    <span class="block text-[12px] text-gray-500 mt-1">19 May 2025</span>
-                </div>
+    <!-- ================= 2. RECENT ACTIVITY CARD ================= -->
+    <div class="bg-[#111625] border border-[#1e2640] rounded-xl p-5 flex-1 min-w-[260px] flex flex-col justify-between">
+        <div>
+            <div class="flex justify-between items-center mb-5">
+                <h3 class="text-[17px] font-semibold tracking-wide text-white">Activity</h3>
+                <a href="#" class="text-[13px] text-[#d4af37] font-medium hover:underline">View All</a>
             </div>
+            
+            <div class="space-y-1">
+                <% 
+                    var activities = new[]
+                    {
+                        new { Text = "Ahmed Ali joined", Time = "10:15 AM", Icon = "fa-user-plus", BgClass = "bg-lime-500/10 text-[#84cc16]" },
+                        new { Text = "Received $120.00", Time = "09:45 AM", Icon = "fa-wallet", BgClass = "bg-teal-500/10 text-[#0d9488]" },
+                        new { Text = "\"Premium\" pack created", Time = "Yesterday", Icon = "fa-box", BgClass = "bg-lime-500/10 text-[#84cc16]" },
+                        new { Text = "Ali added new class", Time = "Yesterday", Icon = "fa-dumbbell", BgClass = "bg-lime-500/10 text-[#84cc16]" },
+                        new { Text = "\"Muscle Gain\" plan", Time = "16 May", Icon = "fa-calendar-days", BgClass = "bg-lime-500/10 text-[#84cc16]" }
+                    };
 
-            <div class="flex items-center py-3 border-b border-[#1e2640] gap-3">
-                <div class="w-7 h-7 bg-teal-500/10 text-[#0d9488] rounded flex items-center justify-center text-[13px] flex-shrink-0"><i class="fa-solid fa-users"></i></div>
-                <div class="text-[15px] text-slate-300 leading-tight truncate">
-                    New Yoga Class Saturday
-                    <span class="block text-[12px] text-gray-500 mt-1">18 May 2025</span>
-                </div>
-            </div>
-
-            <div class="flex items-center py-3 gap-3">
-                <div class="w-7 h-7 bg-lime-500/10 text-[#84cc16] rounded flex items-center justify-center text-[13px] flex-shrink-0"><i class="fa-solid fa-wrench"></i></div>
-                <div class="text-[15px] text-slate-300 leading-tight truncate">
-                    Maintenance Schedule
-                    <span class="block text-[12px] text-gray-500 mt-1">17 May 2025</span>
-                </div>
+                    for (int i = 0; i < activities.Length; i++)
+                    {
+                        var act = activities[i];
+                        string borderClass = (i == activities.Length - 1) ? "" : "border-b border-[#1e2640]";
+                %>
+                        <div class="flex items-center justify-between py-3 <%= borderClass %>">
+                            <div class="flex items-center gap-3 truncate">
+                                <div class="w-7 h-7 <%= act.BgClass %> rounded flex items-center justify-center text-[13px] flex-shrink-0">
+                                    <i class="fa-solid <%= act.Icon %>"></i>
+                                </div>
+                                <div class="text-[15px] text-slate-300 truncate"><%= act.Text %></div>
+                            </div>
+                            <div class="text-[13px] text-gray-500 pl-2 flex-shrink-0"><%= act.Time %></div>
+                        </div>
+                <% 
+                    } 
+                %>
             </div>
         </div>
     </div>
 
-    <!-- 4. MESSAGES CARD -->
-    <div class="bg-[#111625] border border-[#1e2640] rounded-xl p-5 flex-1 min-w-[260px]">
-        <div class="flex justify-between items-center mb-5">
-            <h3 class="text-[17px] font-semibold tracking-wide text-white">Messages</h3>
-            <a href="#" class="text-[13px] text-[#d4af37] font-medium hover:underline">View All</a>
+    <!-- ================= 3. NOTICE BOARD CARD ================= -->
+    <div class="bg-[#111625] border border-[#1e2640] rounded-xl p-5 flex-1 min-w-[260px] flex flex-col justify-between">
+        <div>
+            <div class="flex justify-between items-center mb-5">
+                <h3 class="text-[17px] font-semibold tracking-wide text-white">Notices</h3>
+                <a href="#" class="text-[13px] text-[#d4af37] font-medium hover:underline">View All</a>
+            </div>
+
+            <div class="space-y-1">
+                <% 
+                    var notices = new[]
+                    {
+                        new { Title = "Closed on Sunday", Date = "19 May 2025", Icon = "fa-bullhorn", BgClass = "bg-lime-500/10 text-[#84cc16]" },
+                        new { Title = "New Yoga Class Saturday", Date = "18 May 2025", Icon = "fa-users", BgClass = "bg-teal-500/10 text-[#0d9488]" },
+                        new { Title = "Maintenance Schedule", Date = "17 May 2025", Icon = "fa-wrench", BgClass = "bg-lime-500/10 text-[#84cc16]" }
+                    };
+
+                    for (int i = 0; i < notices.Length; i++)
+                    {
+                        var notice = notices[i];
+                        string borderClass = (i == notices.Length - 1) ? "" : "border-b border-[#1e2640]";
+                %>
+                        <div class="flex items-center py-3 <%= borderClass %> gap-3">
+                            <div class="w-7 h-7 <%= notice.BgClass %> rounded flex items-center justify-center text-[13px] flex-shrink-0">
+                                <i class="fa-solid <%= notice.Icon %>"></i>
+                            </div>
+                            <div class="text-[15px] text-slate-300 leading-tight truncate">
+                                <%= notice.Title %>
+                                <span class="block text-[12px] text-gray-500 mt-1">
+                                    <%= notice.Date %>
+                                </span>
+                            </div>
+                        </div>
+                <% 
+                    } 
+                %>
+            </div>
         </div>
+    </div>
 
-        <div class="space-y-1">
-            <div class="flex items-center justify-between py-3 border-b border-[#1e2640]">
-                <div class="flex items-center gap-3 truncate">
-                    <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-[12px] font-semibold text-white border border-gray-600 flex-shrink-0">AM</div>
-                    <div class="flex flex-col truncate">
-                        <span class="text-[15px] font-medium text-white truncate">Aisha M.</span>
-                        <span class="text-[13px] text-gray-500 truncate">I have a question...</span>
-                    </div>
-                </div>
-                <div class="flex flex-col items-end gap-1 pl-2 flex-shrink-0">
-                    <span class="text-[12px] text-gray-500">10:20 AM</span>
-                    <span class="bg-[#84cc16] text-black text-[11px] font-bold px-1.5 rounded-full min-w-[18px] text-center">2</span>
-                </div>
+    <!-- ================= 4. MESSAGES CARD ================= -->
+    <div class="bg-[#111625] border border-[#1e2640] rounded-xl p-5 flex-1 min-w-[260px] flex flex-col justify-between">
+        <div>
+            <div class="flex justify-between items-center mb-5">
+                <h3 class="text-[17px] font-semibold tracking-wide text-white">Messages</h3>
+                <a href="#" class="text-[13px] text-[#d4af37] font-medium hover:underline">View All</a>
             </div>
 
-            <div class="flex items-center justify-between py-3 border-b border-[#1e2640]">
-                <div class="flex items-center gap-3 truncate">
-                    <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-[12px] font-semibold text-white border border-gray-600 flex-shrink-0">MH</div>
-                    <div class="flex flex-col truncate">
-                        <span class="text-[15px] font-medium text-white truncate">Mohamed H.</span>
-                        <span class="text-[13px] text-gray-500 truncate">Next payment due?</span>
-                    </div>
-                </div>
-                <div class="flex flex-col items-end gap-1 pl-2 flex-shrink-0">
-                    <span class="text-[12px] text-gray-500">09:15 AM</span>
-                    <span class="bg-[#84cc16] text-black text-[11px] font-bold px-1.5 rounded-full min-w-[18px] text-center">1</span>
-                </div>
-            </div>
+            <div class="space-y-1">
+                <% 
+                    var messages = new[]
+                    {
+                        new { Initials = "AM", Name = "Aisha M.", Text = "I have a question...", Time = "10:20 AM", UnreadCount = 2 },
+                        new { Initials = "MH", Name = "Mohamed H.", Text = "Next payment due?", Time = "09:15 AM", UnreadCount = 1 },
+                        new { Initials = "OY", Name = "Omar Yusuf", Text = "Thanks for reminder!", Time = "Yest.", UnreadCount = 0 }
+                    };
 
-            <div class="flex items-center justify-between py-3">
-                <div class="flex items-center gap-3 truncate">
-                    <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-[12px] font-semibold text-white border border-gray-600 flex-shrink-0">OY</div>
-                    <div class="flex flex-col truncate">
-                        <span class="text-[15px] font-medium text-white truncate">Omar Yusuf</span>
-                        <span class="text-[13px] text-gray-500 truncate">Thanks for reminder!</span>
-                    </div>
-                </div>
-                <div class="flex flex-col items-end pl-2 flex-shrink-0">
-                    <span class="text-[12px] text-gray-500">Yest.</span>
-                </div>
+                    for (int i = 0; i < messages.Length; i++)
+                    {
+                        var msg = messages[i];
+                        string borderClass = (i == messages.Length - 1) ? "" : "border-b border-[#1e2640]";
+                %>
+                        <div class="flex items-center justify-between py-3 <%= borderClass %>">
+                            <div class="flex items-center gap-3 truncate">
+                                <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-[12px] font-semibold text-white border border-gray-600 flex-shrink-0">
+                                    <%= msg.Initials %>
+                                </div>
+                                <div class="flex flex-col truncate">
+                                    <span class="text-[15px] font-medium text-white truncate"><%= msg.Name %></span>
+                                    <span class="text-[13px] text-gray-500 truncate"><%= msg.Text %></span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-col items-end <%= msg.UnreadCount > 0 ? "gap-1" : "" %> pl-2 flex-shrink-0">
+                                <span class="text-[12px] text-gray-500"><%= msg.Time %></span>
+                                <% if (msg.UnreadCount > 0) { %>
+                                    <span class="bg-[#84cc16] text-black text-[11px] font-bold px-1.5 rounded-full min-w-[18px] text-center">
+                                        <%= msg.UnreadCount %>
+                                    </span>
+                                <% } %>
+                            </div>
+                        </div>
+                <% 
+                    } 
+                %>
             </div>
         </div>
     </div>
 
 </section>
-    <section class="bg-[#11161b] border border-gray-800 rounded-lg shadow-lg">
+
+<section class="bg-[#11161b] border border-gray-800 rounded-lg shadow-lg">
 
     <!-- Header -->
     <div class="px-4 py-3 border-b border-gray-800">
@@ -913,63 +649,32 @@
         </h2>
     </div>
 
-    <!-- Buttons -->
+    <!-- Buttons Container -->
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-3 p-4">
+        <% 
+            var quickActions = new[]
+            {
+                new { Title = "Add Member", Icon = "fa-user-plus" },
+                new { Title = "Add Trainer", Icon = "fa-users" },
+                new { Title = "Create Membership", Icon = "fa-crown" },
+                new { Title = "Add Class", Icon = "fa-calendar-plus" },
+                new { Title = "Add Payment", Icon = "fa-credit-card" },
+                new { Title = "Reservation", Icon = "fa-calendar-check" },
+                new { Title = "New Notice", Icon = "fa-note-sticky" },
+                new { Title = "Send Message", Icon = "fa-message" },
+                new { Title = "Generate Report", Icon = "fa-chart-column" }
+            };
 
-        <!-- Add Member -->
-        <div class="h-20 bg-[#181d22] border border-gray-700 rounded-md hover:bg-[#20262d] hover:border-lime-400 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer">
-            <i class="fa-solid fa-user-plus text-lime-400 text-2xl mb-2"></i>
-            <span class="text-[11px] text-gray-300">Add Member</span>
-        </div>
-
-        <!-- Add Trainer -->
-        <div class="h-20 bg-[#181d22] border border-gray-700 rounded-md hover:bg-[#20262d] hover:border-lime-400 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer">
-            <i class="fa-solid fa-users text-lime-400 text-2xl mb-2"></i>
-            <span class="text-[11px] text-gray-300">Add Trainer</span>
-        </div>
-
-        <!-- Create Membership -->
-        <div class="h-20 bg-[#181d22] border border-gray-700 rounded-md hover:bg-[#20262d] hover:border-lime-400 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer">
-            <i class="fa-solid fa-crown text-lime-400 text-2xl mb-2"></i>
-            <span class="text-[11px] text-gray-300">Create Membership</span>
-        </div>
-
-        <!-- Add Class -->
-        <div class="h-20 bg-[#181d22] border border-gray-700 rounded-md hover:bg-[#20262d] hover:border-lime-400 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer">
-            <i class="fa-solid fa-calendar-plus text-lime-400 text-2xl mb-2"></i>
-            <span class="text-[11px] text-gray-300">Add Class</span>
-        </div>
-
-        <!-- Add Payment -->
-        <div class="h-20 bg-[#181d22] border border-gray-700 rounded-md hover:bg-[#20262d] hover:border-lime-400 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer">
-            <i class="fa-solid fa-credit-card text-lime-400 text-2xl mb-2"></i>
-            <span class="text-[11px] text-gray-300">Add Payment</span>
-        </div>
-
-        <!-- Reservation -->
-        <div class="h-20 bg-[#181d22] border border-gray-700 rounded-md hover:bg-[#20262d] hover:border-lime-400 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer">
-            <i class="fa-solid fa-calendar-check text-lime-400 text-2xl mb-2"></i>
-            <span class="text-[11px] text-gray-300">Reservation</span>
-        </div>
-
-        <!-- New Notice -->
-        <div class="h-20 bg-[#181d22] border border-gray-700 rounded-md hover:bg-[#20262d] hover:border-lime-400 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer">
-            <i class="fa-solid fa-note-sticky text-lime-400 text-2xl mb-2"></i>
-            <span class="text-[11px] text-gray-300">New Notice</span>
-        </div>
-
-        <!-- Send Message -->
-        <div class="h-20 bg-[#181d22] border border-gray-700 rounded-md hover:bg-[#20262d] hover:border-lime-400 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer">
-            <i class="fa-solid fa-message text-lime-400 text-2xl mb-2"></i>
-            <span class="text-[11px] text-gray-300">Send Message</span>
-        </div>
-
-        <!-- Generate Report -->
-        <div class="h-20 bg-[#181d22] border border-gray-700 rounded-md hover:bg-[#20262d] hover:border-lime-400 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer">
-            <i class="fa-solid fa-chart-column text-lime-400 text-2xl mb-2"></i>
-            <span class="text-[11px] text-gray-300">Generate Report</span>
-        </div>
-
+            foreach (var action in quickActions)
+            {
+        %>
+                <div class="h-20 bg-[#181d22] border border-gray-700 rounded-md hover:bg-[#20262d] hover:border-lime-400 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer">
+                    <i class="fa-solid <%= action.Icon %> text-lime-400 text-2xl mb-2"></i>
+                    <span class="text-[11px] text-gray-300 select-none text-center px-1"><%= action.Title %></span>
+                </div>
+        <% 
+            } 
+        %>
     </div>
 
 </section>
@@ -1059,11 +764,17 @@
                     },
 
                     y: {
+                        min: 0,
+                        max: 2000,
 
-                        ticks: { color: "#94A3B8" },
+                        ticks: {
+                            color: "#94A3B8",
+                            stepSize: 500
+                        },
 
-                        grid: { color: "#232B35" }
-
+                        grid: {
+                            color: "#232B35"
+                        }
                     }
 
                 }
